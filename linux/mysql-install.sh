@@ -113,7 +113,7 @@ printInfo ">>>> installing"
 yum module disable mysql -y
 wget http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
 yum -y install mysql57-community-release-el7-10.noarch.rpm
-yum -y install mysql-community-server
+yum -y install mysql-community-server --nogpgcheck
 
 printInfo ">>>> start mysqld"
 systemctl enable mysqld
