@@ -100,12 +100,12 @@ callAndLog () {
 printInfo ">>>> start begin"
 
 command -v yum > /dev/null 2>&1 || {
-	yum install git -y
+  printError "Require wget but it's not installed"
+	exit 1;
 }
 
 command -v git > /dev/null 2>&1 || {
-	printError "Require wget but it's not installed"
-	exit 1;
+  	yum install git -y
 }
 
 printInfo ">>>> git clone"
