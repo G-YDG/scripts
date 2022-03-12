@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # -----------------------------------------------------------------------------------------------------
-# 安装 Nginx 脚本
+# YUM源更新 脚本
 # 仅适用于 CentOS7 发行版本
 # -----------------------------------------------------------------------------------------------------
 
@@ -97,31 +97,21 @@ callAndLog () {
 
 # ------------------------------- main -------------------------------
 
-printInfo ">>>> install nginx begin"
+printInfo ">>>> begin"
 
-command -v wget > /dev/null 2>&1 || {
-	printError "Require wget but it's not installed"
-	exit 1;
-}
+printInfo ">>>> backup yum.repos.d"
+cd /etc/yum.repos.d/
+mkdir /home/yum.repos.d
+cp * /home/yum.repos.d/
+ll /home/yum.repos.d/
 
-command -v yum > /dev/null 2>&1 || {
-	printError "Require yum but it's not installed"
-	exit 1;
-}
+printInfo ">>>> rm yum.repos.d"
+rm -rf /etc/yum.repos.d/*
 
-printInfo ">>>> yum install"
-yum install vim gcc pcre pcre-devel zlib-devel openssl openssl-devel -y
+printInfo ">>>> get repo"
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.rep
 
-printInfo ">>>> wget nginx"
-wget http://nginx.org/download/nginx-1.17.10.tar.gz
-tar -zxvf nginx-1.17.10.tar.gz
+printInfo ">>>> make cache"
+yum makecache
 
-printInfo ">>>> make install"
-cd nginx-1.17.10
-./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
-make && make install
-
-printInfo ">>>> start nginx"
-cd /usr/local/nginx/ && sbin/nginx
-
-printInfo "<<<< install nginx success"
+printInfo "<<<< update success"

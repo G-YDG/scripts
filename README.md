@@ -2,6 +2,14 @@
 ## 安装
 ### NGINX
 ```
+curl -o- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/centos/yum-update.sh | bash
+```
+或者
+```
+wget -qO- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/centos/yum-update.sh | bash
+```
+### NGINX
+```
 curl -o- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/nginx-install.sh | bash
 ```
 或者
@@ -26,9 +34,9 @@ wget -qO- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/docker-in
 ```
 ### PROJECT-CARD-GAME
 ```
-curl -o- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/project/card-game.sh | bash
+curl -o- https://raw.githubusercontent.com/G-YDG/scripts/master/project/card-game.sh | bash
 ```
 或者
 ```
-wget -qO- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/project/card-game.sh | bash
+wget -qO- https://raw.githubusercontent.com/G-YDG/scripts/master/project/card-game.sh | bash
 ```
