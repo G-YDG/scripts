@@ -1,12 +1,20 @@
 # 常用脚本
 ## 安装
-### NGINX
+### YUM-UPDATE
 ```
 curl -o- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/centos/yum-update.sh | bash
 ```
 或者
 ```
 wget -qO- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/centos/yum-update.sh | bash
+```
+### APT-UPDATE
+```
+curl -o- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/centos/apt-update.sh | bash
+```
+或者
+```
+wget -qO- https://raw.githubusercontent.com/G-YDG/scripts/master/linux/centos/apt-update.sh | bash
 ```
 ### NGINX
 ```

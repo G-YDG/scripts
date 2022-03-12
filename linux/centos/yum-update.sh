@@ -109,7 +109,7 @@ printInfo ">>>> rm yum.repos.d"
 rm -rf /etc/yum.repos.d/*
 
 printInfo ">>>> get repo"
-wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.rep
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo
 
 printInfo ">>>> make cache"
 yum makecache
