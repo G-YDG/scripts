@@ -122,7 +122,7 @@ systemctl status mysqld
 systemctl daemon-reload
 
 printInfo ">>>> 管理员密码如下，请登录 mysql 后重置新密码："
-password=$(grep "password" /var/log/mysql/mysql.log | awk '{print $NF}')
+password=$(grep "password" /var/log/mysqld.log | awk '{print $NF}')
 blueOutput "${password}"
 
 printInfo "<<<< install mysql success"
